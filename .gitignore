@@ -1,0 +1,9 @@
+node_modules
+.env
+.vscode
+.prettierrc.json
+package-lock.json
+pnpm-lock.yaml
+bot.db
+bot.db-shm
+bot.db-wal

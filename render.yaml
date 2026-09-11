@@ -1,0 +1,33 @@
+# Render Blueprint - https://render.com/docs/infrastructure-as-code
+# In the Render dashboard: New -> Blueprint -> point it at this repo.
+# Env vars marked sync: false are prompted for at deploy time (they're
+# secrets/IDs, so they're not stored in this file).
+services:
+  - type: web
+    name: discord-bot
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: TOKEN
+        sync: false
+      - key: CLIENT_ID
+        sync: false
+      - key: OWNER_IDS
+        sync: false
+      - key: PREFIX
+        value: "!"
+      - key: PRODUCTION
+        value: "true"
+      - key: BOT_STATUS
+        value: online
+      - key: BOT_ACTIVITY
+        value: "24/7 and counting"
+      - key: BOT_ACTIVITY_TYPE
+        value: "2"
+      - key: LOG_CHANNEL_ID
+        sync: false
+      - key: SUPPORT_SERVER_INVITE
+        sync: false

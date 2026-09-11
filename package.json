@@ -1,0 +1,42 @@
+{
+    "name": "always-on-discord-bot",
+    "version": "1.0.0",
+    "description": "A minimal, always-on Discord bot skeleton (prefix + slash commands) built to run 24/7 on Render.",
+    "main": "src/index.js",
+    "license": "ISC",
+    "scripts": {
+        "start": "node src/index.js",
+        "dev": "nodemon src/index.js"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "keywords": [
+        "discord",
+        "discord.js",
+        "bot",
+        "render",
+        "24-7",
+        "javascript"
+    ],
+    "dependencies": {
+        "better-sqlite3": "^9.4.3",
+        "discord.js": "^14.14.1",
+        "dotenv": "^16.4.5",
+        "signale": "^1.4.0"
+    },
+    "devDependencies": {
+        "@types/better-sqlite3": "^7.6.9",
+        "@types/signale": "^1.4.7",
+        "nodemon": "^3.1.0"
+    },
+    "signale": {
+        "displayScope": true,
+        "displayBadge": true,
+        "displayDate": true,
+        "displayFilename": true,
+        "displayLabel": true,
+        "displayTimestamp": true,
+        "underlineLabel": true
+    }
+}
