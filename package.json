@@ -9,7 +9,7 @@
         "dev": "nodemon src/index.js"
     },
     "engines": {
-        "node": ">=18.0.0"
+        "node": ">=18.0.0 <27"
     },
     "keywords": [
         "discord",
@@ -17,10 +17,12 @@
         "bot",
         "render",
         "24-7",
-        "javascript"
+        "javascript",
+        "voice"
     ],
     "dependencies": {
-        "better-sqlite3": "^9.4.3",
+        "@discordjs/voice": "^0.18.0",
+        "better-sqlite3": "^12.10.0",
         "discord.js": "^14.14.1",
         "dotenv": "^16.4.5",
         "signale": "^1.4.0"

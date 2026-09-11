@@ -8,6 +8,7 @@ const {
     GuildMessages,
     Guilds,
     GuildMessageTyping,
+    GuildVoiceStates,
 } = GatewayIntentBits;
 
 const clientOptions = {
@@ -17,6 +18,7 @@ const clientOptions = {
         MessageContent,
         GuildMembers,
         GuildMessageTyping,
+        GuildVoiceStates,
     ],
     allowedMentions: {
         parse: ['users', 'roles'],

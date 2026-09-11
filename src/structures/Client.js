@@ -43,10 +43,13 @@ module.exports = class BotClient extends Client {
   }
 
   loadCommands() {
-    const commandsPath = fs.readdirSync(path.join(__dirname, "../commands"));
-    commandsPath.forEach((dir) => {
+    const commandsRoot = path.join(__dirname, "../commands");
+    const categories = fs.readdirSync(commandsRoot).filter((entry) => {
+      return fs.statSync(path.join(commandsRoot, entry)).isDirectory();
+    });
+    categories.forEach((dir) => {
       const commandFiles = fs
-        .readdirSync(path.join(__dirname, `../commands/${dir}`))
+        .readdirSync(path.join(commandsRoot, dir))
         .filter((file) => file.endsWith(".js"));
       commandFiles.forEach(async (file) => {
         const cmd = require(`../commands/${dir}/${file}`);
